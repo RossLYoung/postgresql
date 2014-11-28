@@ -25,7 +25,7 @@ template "#{node['postgresql']['dir']}/postgresql.conf" do
   notifies change_notify, 'service[postgresql]', :delayed
 end
 
-template "#{node['postgresql']['config']['hba_file']}/pg_hba.conf" do
+template "#{node['postgresql']['config']['hba_file']}" do
   source "pg_hba.conf.erb"
   owner "postgres"
   group "postgres"

@@ -17,7 +17,7 @@
 
 change_notify = node['postgresql']['server']['config_change_notify']
 
-template "#{node['postgresql']['config']['conf_file']}" do
+template "#{node['postgresql']['conf_file']}" do
   source "postgresql.conf.erb"
   owner "postgres"
   group "postgres"

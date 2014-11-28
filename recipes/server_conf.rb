@@ -21,7 +21,7 @@ template "#{node['postgresql']['conf_file']}" do
   source "postgresql.conf.erb"
   owner "postgres"
   group "postgres"
-  mode 0600
+  mode 0620
   notifies change_notify, 'service[postgresql]', :delayed
 end
 
@@ -29,6 +29,6 @@ template "#{node['postgresql']['config']['hba_file']}" do
   source "pg_hba.conf.erb"
   owner "postgres"
   group "postgres"
-  mode 00600
+  mode 0620
   notifies change_notify, 'service[postgresql]', :delayed
 end
